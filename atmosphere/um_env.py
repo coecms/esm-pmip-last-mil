@@ -59,7 +59,7 @@ year = mf.fixed_length_header.t2_year
 
 print(f"Updating ozone for year {year}")
 
-if year <= 851:
+if year <= 850:
     ozone = 'ozone_esm_pmip_0850-0850.anc'
 elif year <= 1050:
     ozone = 'ozone_esm_pmip_0851-1050.anc'

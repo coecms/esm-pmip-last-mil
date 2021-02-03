@@ -55,7 +55,7 @@ calendar:
         days: 0
 
 userscripts:
-    #    init: ./scripts/set_restart_year.sh 850 # For spinup - reset the year to 0850
+    init: ./scripts/set_restart_year.sh 850 # For spinup - reset the year to 0850
     run: ./update_landuse.py # Update land use after the run
 
 runspersub: 1
