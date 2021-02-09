@@ -20,7 +20,7 @@ import os
 import shutil
 from glob import glob
 
-landuse = xarray.open_dataset('atmosphere/INPUT/luh2_v2h_states_cable_N96.nc').cable_fraction
+landuse = xarray.open_dataset('work/atmosphere/INPUT/luh2_v2h_states_cable_N96.nc').cable_fraction
 
 class ReplaceOp(mule.DataOperator):
     def __init__(self, da):
@@ -34,8 +34,8 @@ class ReplaceOp(mule.DataOperator):
 
 
 # The last restart of the run
-restart = sorted(glob('atmosphere/aiihca.da*'))[-1]
-#restart = 'atmosphere/restart_dump.astart'
+restart = sorted(glob('work/atmosphere/aiihca.da*'))[-1]
+#restart = 'work/atmosphere/restart_dump.astart'
 
 stash_landfrac = 216
 stash_landfrac_lastyear = 835
@@ -43,7 +43,7 @@ stash_landfrac_lastyear = 835
 mf = mule.DumpFile.from_file(restart)
 
 year = mf.fixed_length_header.t1_year
-year = 1450
+year = 850
 
 print(f'Updating land use for year {year}')
 
