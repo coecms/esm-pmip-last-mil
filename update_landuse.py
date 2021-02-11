@@ -23,6 +23,7 @@ from glob import glob
 landuse = xarray.open_dataset('work/atmosphere/INPUT/luh2_v2h_states_cable_N96.nc').cable_fraction
 
 def normalise(da):
+    da = da.round(decimals=3)
     return da / da.sum('cable_type')
 
 class ReplaceOp(mule.DataOperator):
@@ -36,8 +37,8 @@ class ReplaceOp(mule.DataOperator):
         return self.da.isel(cable_type = source.lbuser5 - 1).data
 
 # The last restart of the run
-restart = sorted(glob('work/atmosphere/aiihca.da*'))[-1]
-#restart = 'work/atmosphere/restart_dump.astart'
+#restart = sorted(glob('work/atmosphere/aiihca.da*'))[-1]
+restart = 'work/atmosphere/restart_dump.astart'
 
 stash_landfrac = 216
 stash_landfrac_lastyear = 835
