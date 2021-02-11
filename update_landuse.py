@@ -25,6 +25,7 @@ landuse = xarray.open_dataset('work/atmosphere/INPUT/luh2_v2h_states_cable_N96.n
 
 def normalise(da):
     da = (numpy.clip(da, 0, 1)).round(decimals=3)
+    da[0,:,:] += 0.001
     return da / da.sum('cable_type')
 
 class ReplaceOp(mule.DataOperator):
