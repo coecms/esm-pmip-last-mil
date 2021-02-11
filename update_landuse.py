@@ -19,11 +19,12 @@ import xarray
 import os
 import shutil
 from glob import glob
+import numpy
 
 landuse = xarray.open_dataset('work/atmosphere/INPUT/luh2_v2h_states_cable_N96.nc').cable_fraction
 
 def normalise(da):
-    da = (da + 0.001).round(decimals=3)
+    da = (numpy.clip(da, 0, 1) + 0.001).round(decimals=3)
     return da / da.sum('cable_type')
 
 class ReplaceOp(mule.DataOperator):
