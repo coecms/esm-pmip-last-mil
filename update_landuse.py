@@ -55,9 +55,12 @@ print(f'Updating land use for year {year} in {restart}')
 out = mf.copy()
 out.validate = lambda *args, **kwargs: True
 
+lu = landuse.sel(time=year)
+lu[0,:,:] = landuse.sel(time=year+1)[0,:,:]
+
 set_current_landuse = ReplaceOp(landuse.sel(time=year))
-set_previous_landuse = ReplaceOp(landuse.sel(time=year+1, method='nearest'))
-#set_previous_landuse = set_current_landuse
+# set_previous_landuse = ReplaceOp(landuse.sel(time=year+1, method='nearest'))
+set_previous_landuse = set_current_landuse
 
 for f in mf.fields:
     if f.lbuser4 == stash_landfrac:
