@@ -56,7 +56,7 @@ print(f'Updating land use for year {year} in {restart}')
 out = mf.copy()
 out.validate = lambda *args, **kwargs: True
 
-i = 2
+i = 3
 lu = landuse.sel(time=year)
 lu[i,:,:] = landuse.sel(time=year+1)[i,:,:]
 
