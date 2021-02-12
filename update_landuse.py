@@ -55,10 +55,12 @@ print(f'Updating land use for year {year} in {restart}')
 out = mf.copy()
 out.validate = lambda *args, **kwargs: True
 
+i = 0
 lu = landuse.sel(time=year)
-lu[1,:,:] = landuse.sel(time=year+1)[1,:,:]
+lu[i,:,:] = landuse.sel(time=year+1)[i,:,:]
 
 set_current_landuse = ReplaceOp(landuse.sel(time=year))
+set_current_landuse = ReplaceOp(lu)
 # set_previous_landuse = ReplaceOp(landuse.sel(time=year+1, method='nearest'))
 set_previous_landuse = set_current_landuse
 
