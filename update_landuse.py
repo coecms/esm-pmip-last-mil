@@ -25,7 +25,7 @@ landuse = xarray.open_dataset('work/atmosphere/INPUT/luh2_v2h_states_cable_N96.n
 
 def normalise(da):
     da = (numpy.clip(da, 0, 1)).round(decimals=3)
-    da[0,:,:] += numpy.where(da[3:,:,:].sum('cable_type') == 0, 0.5, 0)
+    #da[0,:,:] += numpy.where(da[3:,:,:].sum('cable_type') == 0, 0.5, 0)
     return da / da.sum('cable_type')
 
 class ReplaceOp(mule.DataOperator):
@@ -48,7 +48,7 @@ stash_landfrac_lastyear = 835
 mf = mule.DumpFile.from_file(restart)
 
 year = mf.fixed_length_header.t2_year
-year = 850
+#year = 850
 
 print(f'Updating land use for year {year} in {restart}')
 
@@ -57,6 +57,7 @@ out.validate = lambda *args, **kwargs: True
 
 set_current_landuse = ReplaceOp(landuse.sel(time=year))
 set_previous_landuse = ReplaceOp(landuse.sel(time=year-1, method='nearest'))
+set_previous_landuse = set_current_landuse
 
 for f in mf.fields:
     if f.lbuser4 == stash_landfrac:
