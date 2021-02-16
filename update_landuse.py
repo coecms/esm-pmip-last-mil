@@ -58,9 +58,11 @@ out.validate = lambda *args, **kwargs: True
 
 i = 3
 lu = landuse.sel(time=year)
-lu[i,:,:] = landuse.sel(time=year+1)[i,:,:]
+lu2 = landuse.sel(time=year+1)
 
-set_current_landuse = ReplaceOp(landuse.sel(time=year))
+lu = lu + 0.1 * (lu - lu2.data)
+
+#set_current_landuse = ReplaceOp(landuse.sel(time=year))
 set_current_landuse = ReplaceOp(lu)
 # set_previous_landuse = ReplaceOp(landuse.sel(time=year+1, method='nearest'))
 set_previous_landuse = set_current_landuse
