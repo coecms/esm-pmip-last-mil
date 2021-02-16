@@ -60,7 +60,7 @@ i = 3
 lu = landuse.sel(time=year)
 lu2 = landuse.sel(time=year+1)
 
-lu = lu + 0.1 * (lu - lu2.data).where(lu > 0)
+lu = lu + 0.1 * (lu - lu2.data).where(lu == 0)
 
 #set_current_landuse = ReplaceOp(landuse.sel(time=year))
 set_current_landuse = ReplaceOp(lu)
