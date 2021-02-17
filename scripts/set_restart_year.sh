@@ -29,7 +29,7 @@ export UMDIR=~access/umdir
 
 start_year=$1
 
-payu_restart=$(ls -d ./archive/restart* | tail -n 1)
+payu_restart=$(ls -d ./archive/restart* | sort -t t -k 3 -n | tail -n 1)
 
 echo "Setting restart year in ${payu_restart} to ${start_year}"
 
