@@ -38,8 +38,8 @@ class ReplaceOp(mule.DataOperator):
         return self.da.isel(cable_type = source.lbuser5 - 1).data
 
 # The last restart of the run
-restart = sorted(glob('work/atmosphere/aiihca.da*'))[-1]
-#restart = 'work/atmosphere/restart_dump.astart'
+#restart = sorted(glob('work/atmosphere/aiihca.da*'))[-1]
+restart = 'work/atmosphere/restart_dump.astart'
 
 stash_landfrac = 216
 stash_landfrac_lastyear = 835
