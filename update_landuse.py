@@ -21,7 +21,8 @@ import shutil
 from glob import glob
 import numpy
 
-landuse = xarray.open_dataset('work/atmosphere/INPUT/luh2_v2h_states_cable_N96.nc').cable_fraction
+#landuse = xarray.open_dataset('work/atmosphere/INPUT/luh2_v2h_states_cable_N96.nc').cable_fraction
+landuse = xarray.open_dataset('notebooks/luh2_v2h_states_cable_N96_v2.nc').cable_fraction
 
 def normalise(da):
     #da = (numpy.clip(da, 0, 1)).round(decimals=3)
@@ -58,9 +59,9 @@ out.validate = lambda *args, **kwargs: True
 
 i = 3
 lu = landuse.sel(time=year)
-lu2 = landuse.sel(time=year+1)
+#lu2 = landuse.sel(time=year+1)
 
-lu[1,:,:] = lu[1,:,:] * 1.1
+#lu[1,:,:] = lu[1,:,:] * 1.1
 
 #set_current_landuse = ReplaceOp(landuse.sel(time=year))
 set_current_landuse = ReplaceOp(lu)
