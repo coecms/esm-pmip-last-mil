@@ -41,6 +41,11 @@ collate:
    restart: true
    mem: 4GB
 
+mpi:
+    runcmd: ddt --connect mpirun
+modules:
+    - arm-forge
+
 restart: /g/data/access/payu/access-esm/restart/pmip-lm
 
 calendar:
