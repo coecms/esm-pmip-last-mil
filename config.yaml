@@ -9,7 +9,7 @@ model: access
 submodels:
     - name: atmosphere
       model: um
-      ncpus: 192
+      ncpus: 20
       exe: /scratch/w35/hxw599/access-esm/pmip-lm/build/bin/um_hg3.exe
       input:
         - /g/data/access/payu/access-esm/input/pre-industrial/atmosphere
@@ -17,7 +17,7 @@ submodels:
 
     - name: ocean
       model: mom
-      ncpus: 180
+      ncpus: 16
       exe: /g/data/access/payu/access-esm-pmip/pmip-mh/bin/mom5xx
       input:
         - /g/data/access/payu/access-esm/input/pre-industrial/ocean/common
