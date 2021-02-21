@@ -43,7 +43,7 @@ collate:
    mem: 4GB
 
 mpi:
-    runcmd: ddt --connect mpirun
+    runcmd: ddt mpirun
 modules:
     - arm-forge
 

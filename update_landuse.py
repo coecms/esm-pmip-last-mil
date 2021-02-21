@@ -25,6 +25,7 @@ import numpy
 landuse = xarray.open_dataset('notebooks/luh2_v2h_states_cable_N96_v2.nc').cable_fraction
 
 def normalise(da):
+    da = da.round(decimals=4)
     return da / da.sum('cable_type')
 
 class ReplaceOp(mule.DataOperator):
