@@ -43,10 +43,10 @@ collate:
    restart: true
    mem: 4GB
 
-mpi:
-    runcmd: ddt mpirun
-modules:
-    - arm-forge
+   #mpi:
+   #    runcmd: ddt mpirun
+   #modules:
+   #    - arm-forge
 
 restart: /g/data/access/payu/access-esm/restart/pmip-lm
 
@@ -62,7 +62,7 @@ calendar:
         days: 0
 
 userscripts:
-    init: # ./scripts/set_restart_year.sh 850 # For spinup - reset the year to 0850
+    #init:  ./scripts/set_restart_year.sh 850 # For spinup - reset the year to 0850
     run: ./update_landuse.py # Update land use after the run
 
 runspersub: 1

@@ -39,8 +39,8 @@ class ReplaceOp(mule.DataOperator):
         return self.da.isel(cable_type = source.lbuser5 - 1).data
 
 # The last restart of the run
-#restart = sorted(glob('work/atmosphere/aiihca.da*'))[-1]
-restart = 'work/atmosphere/restart_dump.astart'
+restart = sorted(glob('work/atmosphere/aiihca.da*'))[-1]
+#restart = 'work/atmosphere/restart_dump.astart'
 
 stash_landfrac = 216
 stash_landfrac_lastyear = 835
@@ -48,7 +48,7 @@ stash_landfrac_lastyear = 835
 mf = mule.DumpFile.from_file(restart)
 
 year = mf.fixed_length_header.t2_year
-year = 851
+#year = 851
 
 print(f'Updating land use for year {year} in {restart}')
 
@@ -57,7 +57,7 @@ out.validate = lambda *args, **kwargs: True
 lu = landuse.sel(time=year)
 
 set_current_landuse = ReplaceOp(landuse.sel(time=year))
-set_previous_landuse = ReplaceOp(landuse.sel(time=year+1, method='nearest'))
+set_previous_landuse = ReplaceOp(landuse.sel(time=year - 1, method='nearest'))
 
 for f in mf.fields:
     if f.lbuser4 == stash_landfrac:
