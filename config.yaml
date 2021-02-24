@@ -10,8 +10,8 @@ submodels:
     - name: atmosphere
       model: um
       ncpus: 192
-      #exe: /scratch/w35/hxw599/access-esm/pmip-lm/build/bin/um_hg3.exe
-      exe: /scratch/w35/saw562/access-esm/holger-build/pmip-lm/build/bin/um_hg3.exe
+      exe: /scratch/w35/hxw599/access-esm/pmip-lm/build/bin/um_hg3.exe
+      # exe: /scratch/w35/saw562/access-esm/holger-build/pmip-lm/build/bin/um_hg3.exe
       # exe: /scratch/w35/saw562/access-esm/esm-pmip-last-mil/um_hg3.exe-20200311_r343
       input:
         - /g/data/access/payu/access-esm/input/pre-industrial/atmosphere
