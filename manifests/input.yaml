@@ -131,6 +131,11 @@ work/atmosphere/INPUT/luh2_v2h_states_cable_N96_v3.nc:
   hashes:
     binhash: e7ecd8cbcb9db34884579fb7fe025618
     md5: e5ea8d2acbc93b83d1a82760f294e3b0
+work/atmosphere/INPUT/luh2_v2h_states_cable_N96_v4_floor.nc:
+  fullpath: /g/data/access/payu/access-esm/input/pmip-lm/atmosphere/luh2_v2h_states_cable_N96_v4_floor.nc
+  hashes:
+    binhash: a8121c1336a3a047327f73eb0a5907ee
+    md5: 151f7c246fffaef1b917c891cf57b141
 work/atmosphere/INPUT/ozone_1850_ESM1.anc:
   fullpath: /g/data/access/payu/access-esm/input/pre-industrial/atmosphere/ozone_1850_ESM1.anc
   hashes:

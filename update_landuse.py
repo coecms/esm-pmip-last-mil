@@ -21,7 +21,7 @@ import shutil
 from glob import glob
 import numpy
 
-landuse = xarray.open_dataset('work/atmosphere/INPUT/luh2_v2h_states_cable_N96_v3.nc').cable_fraction
+landuse = xarray.open_dataset('work/atmosphere/INPUT/luh2_v2h_states_cable_N96_v4_floor.nc').cable_fraction
 
 def normalise(da):
     return da / da.sum('cable_type')
