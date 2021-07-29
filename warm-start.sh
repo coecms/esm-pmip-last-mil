@@ -3,6 +3,7 @@
 # Initialise an ACCESS-ESM Payu run from a CSIRO experiment
 set -eu
 
+module purge
 module use /g/data/hh5/public/modules
 module load conda/analysis3
 
