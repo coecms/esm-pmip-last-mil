@@ -72,8 +72,8 @@ ncatted -a units,time,o,c,"seconds since ${start_year}-01-01 00:00:00" $payu_res
 
 secs_realyr=$(python -c "from datetime import date; d=(date(1850,1,1)-date(1,1,1)); print(d.days*24*60*60)")
 mv $payu_restart/ice/iced.* $payu_restart/ice/iced.orig
-scripts/cicedumpdatemodify.py -i $payu_restart/ice/iced.orig -o $payu_restart/ice/reset.iced.${start_year} --istep0=0 --time=${secs_realyr}. --time_forc=0.
+scripts/cicedumpdatemodify.py -i $payu_restart/ice/iced.orig -o $payu_restart/ice/iced.${start_year} --istep0=0 --time=${secs_realyr}. --time_forc=0.
 rm $payu_restart/ice/iced.orig
 cat > $payu_restart/ice/ice.restart_file << EOF
-reset.iced.${start_year}
+iced.${start_year}
 EOF
