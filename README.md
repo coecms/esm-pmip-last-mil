@@ -1,3 +1,5 @@
+> **_NOTE:_** Please don't use this any more. Use https://github.com/coecms/access-esm instead
+
 [![Build Status](https://travis-ci.org/coecms/esm-esm-pmip-lm.svg?branch=master)](https://travis-ci.org/coecms/esm-esm-pmip-lm)
 
 # ACCESS-ESM with **payu**
